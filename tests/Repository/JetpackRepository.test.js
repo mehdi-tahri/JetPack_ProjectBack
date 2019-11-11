@@ -26,7 +26,6 @@ describe('create jetpack', function () {
 });
 
 describe('update jetpack', function () {
-
   test('Test update function', () => {
     let dbMock = {
       post : jest.fn(),
@@ -57,6 +56,5 @@ describe('update jetpack', function () {
 
     dbMock.value.mockReturnValue(false);
     expect(()=> (repository.update(jetpack))).toThrow('Jetpack is not found');
-
   });
 });
