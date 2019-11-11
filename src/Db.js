@@ -5,7 +5,7 @@ var adapter = new FileSync('db.json');
 var db = low(adapter);
 
 // Set some defaults
-db.defaults({ jetpacks: []})
+db.defaults({ jetpacks: [], booking: []})
     .write();
 
 module.exports = db;

@@ -1,0 +1,11 @@
+22:44:15 (19988) INFO ConfigReader Using stryker.conf.js in the current working directory.
+22:44:16 (19988) DEBUG BroadcastReporter Broadcasting to reporters ["clear-text","progress"]
+22:44:15 (19988) DEBUG ConfigReader Loading config stryker.conf.js
+22:44:15 (19988) DEBUG PluginLoader Loading @stryker-mutator/* from D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator
+22:44:15 (19988) DEBUG PluginLoader Loading plugin "D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\html-reporter" (matched with expression @stryker-mutator/*)
+22:44:15 (19988) DEBUG PluginLoader Loading plugin "D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\javascript-mutator" (matched with expression @stryker-mutator/*)
+22:44:15 (19988) DEBUG PluginLoader Loading plugin "D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\jest-runner" (matched with expression @stryker-mutator/*)
+22:44:15 (19988) DEBUG PluginLoader Loading plugins D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\html-reporter
+22:44:15 (19988) DEBUG PluginLoader Loading plugins D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\javascript-mutator
+22:44:15 (19988) DEBUG PluginLoader Loading plugins D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\jest-runner
+22:44:16 (19988) DEBUG PluginLoader Loading plugins D:\Users\Sam\Documents\Projet_Jetpack\back\JetPack_ProjectBack\node_modules\@stryker-mutator\core\src\reporters\index.js
