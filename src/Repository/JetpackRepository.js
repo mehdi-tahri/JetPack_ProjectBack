@@ -39,3 +39,19 @@ module.exports = class {
     throw 'Jetpack is not found';
 
   }
+  delete(jetpack) {
+    if (!jetpack) {
+      throw 'Jetpack object is undefined';
+    }
+
+    if (!jetpack.id) {
+      throw 'Jetpack object is missing information';
+    }
+
+    this.db
+    .get('jetpacks')
+    .remove({ id: jetpack.id})
+    .write()
+  }
+
+};
