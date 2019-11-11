@@ -2,11 +2,16 @@ language: node_js
 node_js:
   - "node"
 
+cache:
+  directories:
+  - node_modules
+
 before_install:
   - npm install
   - npm run start.ci
 
 script:
+  - node_modules/.bin/jest
   - npm run unit.test.coverage
   - npm run unit.test.mutation
   - node_modules/.bin/newman run tests/api/collection.json
