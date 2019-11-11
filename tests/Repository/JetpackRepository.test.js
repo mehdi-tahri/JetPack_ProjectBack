@@ -1,5 +1,5 @@
-const Repository = require('./JetpackRepository');
-const Jetpack = require('../Entity/Jetpack');
+const Repository = require('../../src/Repository/JetpackRepository');
+const Jetpack = require('../../src/Entity/Jetpack');
 
 describe('create jetpack', function () {
 
