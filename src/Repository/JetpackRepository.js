@@ -39,3 +39,4 @@ module.exports = class {
     throw 'Jetpack is not found';
 
   }
+}
