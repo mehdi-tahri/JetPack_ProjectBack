@@ -10,3 +10,4 @@ install:
 script:
   - npm run unit.test.coverage
   - node_modules/.bin/jest
+
