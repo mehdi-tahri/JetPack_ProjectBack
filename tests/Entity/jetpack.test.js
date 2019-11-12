@@ -1,4 +1,4 @@
-const Jetpack = require('./Jetpack');
+const Jetpack = require('../../src/Entity/Jetpack');
 describe('Jetpack toJson', function () {
 
     test('Test toJson', () => {

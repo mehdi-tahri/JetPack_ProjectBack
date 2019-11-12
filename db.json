@@ -1,0 +1,23 @@
+{
+  "jetpacks": [
+    {
+      "id": "72b9e036-c23e-4712-86a3-f0dde0422340",
+      "name": "ok",
+      "image": "url"
+    }
+  ],
+  "booking": [
+    {
+      "id": "f23ff1e2-d18a-4f38-b275-47ca37fce100",
+      "jetpack_id": "0f3c5c49-145d-4b69-8732-9158197e16d8",
+      "start_date": "1570720573",
+      "end_date": "1570720580"
+    },
+    {
+      "id": "d23a1e7f-0590-4417-ba9b-6cc03d089561",
+      "jetpack_id": "72b9e036-c23e-4712-86a3-f0dde0422340",
+      "start_date": "1570720000",
+      "end_date": "1570720005"
+    }
+  ]
+}
