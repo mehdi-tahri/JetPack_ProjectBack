@@ -97,3 +97,72 @@ describe('Delete Jetpack', function () {
       expect(()=> (repository.delete())).toThrow('Jetpack object is undefined');
   });
 });
+
+
+describe('Get All Jetpack', function () {
+
+  test('Test getAll', () => {
+      let dbMock = {
+          get : jest.fn(),
+          value : jest.fn()
+      };
+      const jetpack = new Jetpack();
+      const jetpack2 = new Jetpack();
+      jetpack.id="1";
+      jetpack.name = "test";
+      jetpack.image ="123";
+      jetpack2.id="2";
+      jetpack2.name = "test2";
+      jetpack2.image ="124";
+      dbMock.get.mockReturnValue(dbMock);
+      dbMock.value.mockReturnValue([jetpack,jetpack2]);
+
+      const repository = new Repository(dbMock);
+      jetpacks = repository.getAll();
+      expect(jetpacks.length).toBe(2);
+      expect(jetpacks[0].name).toBe("test");
+      expect(jetpacks[0].image).toBe("123");
+      expect(jetpacks[1].name).toBe("test2");
+      expect(jetpacks[1].image).toBe("124");
+  });
+});
+
+describe('Get Jetpack by ID', function () {
+  test('Test Jetpack by ID', () => {
+      let dbMock = {
+          get : jest.fn(),
+          find : jest.fn(),
+          value : jest.fn()
+      };
+      const jetpack = new Jetpack();
+      jetpack.id="1";
+      jetpack.name = "test";
+      jetpack.image ="123";
+      dbMock.get.mockReturnValue(dbMock);
+      dbMock.find.mockReturnValue(dbMock);
+      dbMock.value.mockReturnValue(jetpack);
+
+      const repository = new Repository(dbMock);
+      jetpacks = repository.getById("1");
+      expect(jetpacks.name).toBe("test");
+      expect(jetpacks.image).toBe("123");
+  });
+
+  test('Return a message that announced that the Jetpack is not found', () => {
+      let dbMock = {
+          get : jest.fn(),
+          post : jest.fn(),
+          find : jest.fn(),
+          value : jest.fn()
+      };
+      const jetpack = new Jetpack();
+      dbMock.get.mockReturnValue(dbMock);
+      dbMock.post.mockReturnValue(dbMock);
+      dbMock.find.mockReturnValue(dbMock);
+      dbMock.value.mockReturnValue(dbMock);
+
+      const repository = new Repository(dbMock);
+      dbMock.value.mockReturnValue(false);
+      expect(()=> (repository.getById(""))).toThrow('Id is missing');
+  });
+});
