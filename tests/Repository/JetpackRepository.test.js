@@ -26,6 +26,7 @@ describe('create jetpack', function () {
 });
 
 describe('update jetpack', function () {
+
   test('Test update function', () => {
     let dbMock = {
       post : jest.fn(),
@@ -56,5 +57,43 @@ describe('update jetpack', function () {
 
     dbMock.value.mockReturnValue(false);
     expect(()=> (repository.update(jetpack))).toThrow('Jetpack is not found');
+
+  });
+});
+
+describe('Delete Jetpack', function () {
+  test('Delete Jetpack', () => {
+      let dbMock = {
+          get : jest.fn(),
+          remove : jest.fn(),
+          write : jest.fn()
+      };
+      const jetpack = new Jetpack();
+      jetpack.id="1";
+      jetpack.name = "test";
+      jetpack.image ="123";
+      dbMock.get.mockReturnValue(dbMock);
+      dbMock.remove.mockReturnValue(dbMock);
+      dbMock.write.mockReturnValue(jetpack);
+
+      const repository = new Repository(dbMock);
+      jetpacks = repository.delete(jetpack);
+      expect(jetpacks).toBe(undefined);
+  });
+
+  test('Return a message that announced that the id is missing', () => {
+      let dbMock = {
+          get : jest.fn(),
+          remove : jest.fn(),
+          write : jest.fn()
+      };
+      const jetpack = new Jetpack();
+      dbMock.get.mockReturnValue(dbMock);
+      dbMock.remove.mockReturnValue(dbMock);
+      dbMock.write.mockReturnValue(dbMock);
+
+      const repository = new Repository(dbMock);
+      expect(()=> (repository.delete(jetpack))).toThrow('Jetpack object is missing information');
+      expect(()=> (repository.delete())).toThrow('Jetpack object is undefined');
   });
 });
