@@ -5,11 +5,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 
 
-app
-    .route('/jetpacks/:id?')
+app.route('/jetpacks/:id?/:start_date?/:end_date?')
     .get(require('./controller/Jetpack/GetJetpackController'))
     .post(require('./controller/Jetpack/CreateJetpackController'))
+    .delete(require('./controller/Jetpack/DeleteJetpackController'))
+
+app.route('/booking')
+   .get(require('./controller/Booking/GetBookingController'))
+   .post(require('./controller/Booking/CreateBookingController'))
 
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+    console.log('Jetpack backend listening on port 3000!')
 });

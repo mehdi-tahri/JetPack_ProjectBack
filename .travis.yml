@@ -6,7 +6,8 @@ install:
   - npm install
   - npm run start.ci
 
+
 script:
   - npm run unit.test.coverage
   - node_modules/.bin/jest
-  - node_modules/.bin/newman run tests/api/collection.json
+
