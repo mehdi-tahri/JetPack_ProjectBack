@@ -16,7 +16,7 @@ module.exports = class {
     .push(jetpack.toJson())
     .write()
   }
-
+  
   update(jetpack) {
     if (!jetpack) {
       throw 'Jetpack object is undefined';
