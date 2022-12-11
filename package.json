@@ -35,7 +35,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "install": "^0.12.2",
     "lowdb": "^1.0.0",
     "newman": "^4.4.1",
